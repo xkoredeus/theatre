@@ -1,0 +1,204 @@
+.footer {
+  color: $white;
+  background-color: #222222;
+}
+
+.footer-top {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #D9D9D9;
+
+  @include r($breakpoint-2) {
+    padding-bottom: 70px;
+  }
+
+  @include r($breakpoint-4) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: none;
+  }
+}
+
+.footer-logo {
+  max-width: 100%;
+  svg {
+    max-width: 100%;
+    fill: $white;
+    @include ease-long;
+  }
+
+  @include r($breakpoint-4) {
+    display: flex;
+    justify-content: center;
+  }
+
+  &:hover {
+    svg {
+      fill: $orange;
+    }
+  }
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+  row-gap: 30px;
+
+  @include r($breakpoint-2) {
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 70px;
+  }
+
+  @include r($breakpoint-4) {
+    justify-content: center;
+    gap: 35px;
+    row-gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  &__wrapper {
+    @include rmin($breakpoint-1) {
+      padding-left: 7.33%;
+    }
+  }
+
+  &__link {
+    color: $white;
+
+    @include inter-h2-light;
+
+
+    @include r($breakpoint-4) {
+      font-size: 16px;
+    }
+  }
+}
+
+.footer-info {
+  @include rmin($breakpoint-1) {
+    transform: translateX(10px);
+  }
+
+  @include r($breakpoint-4) {
+    padding-left: 30px;
+  }
+
+  &__item {
+    &-header {
+      margin-left: -35px;
+      display: grid;
+      grid-template-columns: 20px auto;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 7px;
+    }
+
+    &-title {
+      color: $white;
+
+
+      @include r($breakpoint-4) {
+        font-size: 16px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &-address {
+      max-width: 305px;
+
+      @include r($breakpoint-1) {
+        max-width: 250px;
+      }
+    }
+  }
+}
+
+.footer-payments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include r($breakpoint-1) {
+    width: calc(100% + 40px);
+    transform: translateX(-40px);
+  }
+  @include r(1350) {
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  .button {
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+
+    @include r($breakpoint-4) {
+      margin-top: 40px;
+    }
+
+  }
+
+  &__list {
+    display: flex;
+    gap: 37px;
+
+    @include r(1350) {
+      gap: 15px;
+    }
+
+    @include r($breakpoint-4) {
+      gap: 37px;
+      justify-content: center;
+    }
+  }
+}
+
+.footer-bottom {
+  padding-top: 33px;
+  padding-bottom: 43px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include r($breakpoint-2) {
+    padding-bottom: 90px;
+  }
+
+  @include r($breakpoint-4) {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+}
+
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 9px;
+
+  svg {
+    fill: #fff;
+    @include ease-long;
+  }
+
+  a:hover {
+    svg {
+      fill: #c184ff;
+    }
+  }
+}
+
+.culture-logo {
+  @include ease-long;
+
+  &:hover {
+    opacity: .8;
+  }
+}

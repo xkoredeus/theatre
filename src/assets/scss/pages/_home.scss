@@ -1,0 +1,1070 @@
+@mixin height {
+  min-height: 600px;
+
+  @include r($breakpoint-1) {
+    min-height: 450px;
+  }
+
+  @include r(576) {
+    min-height: 206px;
+  }
+}
+
+.offer-top-slider {
+  &__item {
+    position: relative;
+
+    &-picture {
+      @include cv;
+      @include height;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-bottom: 20px;
+
+    @include r($breakpoint-4) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 70px;
+    bottom: 50px;
+
+    @include r($breakpoint-1) {
+      right: 50px;
+    }
+
+    @include r($breakpoint-4) {
+      right: 30px;
+      bottom: 30px;
+    }
+  }
+
+  &__stage {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30%;
+      height: 100%;
+      background-color: $orange;
+
+      @include ease-long;
+    }
+
+    &-wrapper {
+      position: absolute;
+      left: 40px;
+      bottom: 50px;
+
+      @include r($breakpoint-4) {
+        display: none;
+      }
+    }
+
+    &-picture {
+      width: 320px;
+      height: 180px;
+      @include cv;
+      border: 1px solid rgba(255,255,255,0.5);
+      margin-bottom: 18px;
+
+      @include r($breakpoint-1) {
+        width: 221px;
+        height: 124px;
+      }
+    }
+  }
+}
+
+.offer-bottom-slider {
+  @include r($breakpoint-2) {
+    margin-bottom: 30px;
+  }
+
+  @include r($breakpoint-4) {
+    margin-bottom: 20px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  &__date {
+    position: relative;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include r($breakpoint-4) {
+      order: 2;
+      text-align: right;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 100%;
+      background-color: $orange;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__info {
+    text-align: right;
+
+    @include r($breakpoint-4) {
+      order: 1;
+      text-align: left;
+      max-width: 50%;
+    }
+  }
+}
+
+.offer-slider__wrapper {
+  @include r($breakpoint-1) {
+    width: calc(100% + 40px);
+  }
+  @include r($breakpoint-2) {
+    width: auto;
+  }
+}
+
+.offer-card {
+  position: relative;
+  background-color: $white;
+  @include height;
+  margin-bottom: 20px;
+
+  @include r($breakpoint-1) {
+    &__wrapper {
+      margin-left: 40px;
+    }
+  }
+
+  @include r($breakpoint-2) {
+    display: none;
+
+    &__wrapper {
+      margin-left: 0;
+    }
+  }
+
+  .offer-card-slider {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    top: 0;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  &__item {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  &__list {
+    position: relative;
+    font-family: $font-inter;
+    @include inter-h2-light;
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+
+    @include r($breakpoint-1) {
+      gap: 20px
+    }
+    
+    &::before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: calc(100% + 6px);
+      top: 0;
+      right: 5px;
+      background-color: #D8D8D8;
+    }
+
+    &-title {
+      margin-bottom: 30px;
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding-top: 9px;
+      padding-bottom: 9px;
+
+      &-border {
+        position: relative;
+        background-color: #EEEEEE;
+        display: block;
+        height: 1px;
+        flex-grow: 1;
+        transform: translateY(15px);
+      }
+
+      &--disabled {
+        span:first-child,
+        span:last-child {
+          opacity: .4;
+        }
+
+      }
+    }
+  }
+
+  &__info {
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 70px;
+
+      @include r($breakpoint-1) {
+        gap: 50px;
+      }
+
+      .forum-h1 {
+        position: relative;
+        margin-bottom: 16px;
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 1px;
+          bottom: -6px;
+          background-color: $dark;
+        }
+      }
+    }
+
+    &-date {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+.offer-button {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include r($breakpoint-1) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @include r($breakpoint-1) {
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+}
+
+.board-section {
+  position: relative;
+  .swiper-slide {
+    height: auto;
+  }
+
+  @include r($breakpoint-4) {
+    margin-bottom: 40px;
+
+    .col-lg-3 {
+      position: static;
+    }
+
+    .button-link {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.board {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  padding-top: 25px;
+  border-top: 1px solid #636363;
+  height: 100%;
+
+  @include r($breakpoint-4) {
+    padding-top: 15px;
+  }
+
+  &-descr {
+    margin-top: 14px;
+
+    @include r($breakpoint-4) {
+      margin-top: 6px
+    }
+  }
+  &-picture {
+    margin-top: 23px;
+    margin-bottom: 25px;
+    min-height: 182px;
+    @include cv;
+
+    @include r($breakpoint-4) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.board-slider {
+  @include r($breakpoint-1) {
+    .swiper-slide {
+      max-width: 46.33%;
+    }
+  }
+  @include r($breakpoint-3) {
+    .swiper-slide {
+      max-width: unset;
+    }
+  }
+  &__wrapper {
+    margin-right: 30px;
+
+    @include r($breakpoint-1) {
+      margin-right: 8.33333%;
+    }
+
+    @include r($breakpoint-3) {
+      margin-right: 37%;
+    }
+
+    @include r($breakpoint-4) {
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.board-info {
+  height: 100%;
+
+  @include r($breakpoint-4) {
+    & > div {
+      width: 100%;
+    }
+
+    .swiper-nav button {
+      align-items: center;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    background-color: $gray;
+    z-index: 2;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 80px;
+      height: 100%;
+      background-color: $gray;
+      right: 100%;
+      top: 0;
+    }
+  }
+}
+.payment {
+  @include r($breakpoint-4) {
+    padding-bottom: 80px;
+  }
+}
+.payment__in {
+  position: relative;
+}
+.payment-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  @include r($breakpoint-2) {
+    top: auto;
+    bottom: 5px;
+  }
+
+  @include r($breakpoint-4) {
+    left: 0;
+    right: auto;
+  }
+}
+
+.payment-title {
+  padding-left: 330px;
+
+  @include r($breakpoint-1) {
+    padding-left: 25%;
+  }
+
+  @include r($breakpoint-2) {
+    padding-left: 0;
+  }
+}
+
+.payment-banner {
+  min-height: 280px;
+  background-color: #FF6632;
+  @include cv;
+  background-position-y: 0;
+
+  @include r($breakpoint-1) {
+    min-height: 214px;
+  }
+
+  @include r($breakpoint-4) {
+    position: relative;
+    min-height: 348px;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding-top: 27px;
+    overflow: hidden;
+
+    @include r($breakpoint-3) {
+      margin-top: -20px;
+    }
+
+    @include r($breakpoint-4) {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    left: 3.27%;
+    bottom: 0;
+    height: calc(100% - 52px);
+
+
+    @include r($breakpoint-2) {
+      bottom: 3%;
+    }
+
+    @include r($breakpoint-4) {
+      max-height: 112px;
+      bottom: auto;
+      left: 12px;
+      top: 38px;
+    }
+
+    &-in {
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      @include r($breakpoint-4) {
+        position: static;
+      }
+    }
+
+    img {
+      position: relative;
+      max-height: 100%;
+      width: auto;
+    }
+
+    &-circle {
+      position: absolute;
+      border-radius: 50%;
+
+      &--1 {
+        width: 50px;
+        height: 50px;
+        left: 20px;
+        top: 10px;
+        background-color: $white;
+
+        @include r($breakpoint-1) {
+          width: 32px;
+          height: 32px;
+        }
+
+        @include r($breakpoint-4) {
+          width: 21px;
+          height: 21px;
+        }
+      }
+
+      &--2 {
+        bottom: 20px;
+        left: 40%;
+        width: 63px;
+        height: 63px;
+        border: 4px solid #71BF01;
+
+        @include r($breakpoint-1) {
+          width: 39px;
+          height: 39px;
+          bottom: 6px;
+        }
+
+        @include r($breakpoint-4) {
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+      &--3 {
+        top: 25%;
+        right: -24%;
+        width: 70px;
+        height: 70px;
+        border: 4px solid $white;
+
+        @include r($breakpoint-1) {
+          width: 44px;
+          height: 44px;
+        }
+
+        @include r($breakpoint-4) {
+          width: 33px;
+          height: 33px;
+          border-color: #71BF01;
+          background-color: #71BF01;
+        }
+      }
+    }
+  }
+  &__pushkin {
+    position: absolute;
+    right: 8.6%;
+    bottom: 0;
+    height: 100%;
+
+    @include r($breakpoint-1) {
+      right: 5.3%;
+    }
+
+    @include r($breakpoint-4) {
+      height: 192px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &-in {
+      position: relative;
+      height: 100%;
+
+      @include r($breakpoint-4) {
+        position: static;
+      }
+
+      img {
+        max-height: 100%;
+        width: auto;
+      }
+    }
+
+    &-circle {
+      position: absolute;
+      border-radius: 50%;
+
+      &--1 {
+        width: 70px;
+        height: 70px;
+        right: -50px;
+        top: 15%;
+        background-color: #71BF01;
+
+        @include r($breakpoint-1) {
+          width: 44px;
+          height: 44px;
+          right: -28px;
+        }
+
+        @include r($breakpoint-4) {
+          top: -15%;
+          border: 4px solid #71BF01;
+          background: none;
+        }
+      }
+
+      &--2 {
+        bottom: 38px;
+        left: -30px;
+        width: 58px;
+        height: 58px;
+        border: 4px solid #71BF01;
+
+        @include r($breakpoint-1) {
+          width: 44px;
+          height: 44px;
+        }
+
+        @include r($breakpoint-4) {
+          top: -65%;
+          left: auto;
+          right: -33%;
+          border-color: $white;
+        }
+      }
+    }
+  }
+  &__house {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    height: calc(100% - 65px);
+    width: auto;
+
+    @include r($breakpoint-1) {
+      height: calc(100% - 79px);
+    }
+
+    @include r($breakpoint-4) {
+      height: 152px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.payment-section__title {
+  margin-bottom: 45px;
+
+  @include r($breakpoint-4) {
+    margin-bottom: 20px;
+  }
+}
+
+.payment-buttons {
+  padding-top: 27px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include r($breakpoint-3) {
+    max-width: 73%;
+  }
+
+  @include r($breakpoint-4) {
+    padding-top: 20px;
+    max-width: unset;
+    padding-bottom: 45px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    border-top: 1px solid $dark;
+    border-bottom: 1px solid $dark;
+    padding: 20px 10px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 100%;
+      top: 0;
+      transform: scale(0);
+      background-color: $dark;
+      @include ease-long;
+    }
+
+    &::before {
+      left: 0;
+      transform-origin: 100% 100%;
+    }
+
+    &::after {
+      right: 0;
+      transform-origin: 0 0;
+    }
+
+    &:hover {
+      color: $dark;
+      &::before,
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.info {
+  color: $white;
+  background-color: #222222;
+
+  &__picture {
+    @include cv;
+    &--1 {
+      min-height: 330px;
+
+      @include r($breakpoint-1) {
+        min-height: 272px;
+      }
+
+      @include r($breakpoint-2) {
+        max-width: 590px;
+      }
+
+      @include r($breakpoint-4) {
+        min-height: 148px;
+      }
+    }
+
+    &--2 {
+      min-height: 442px;
+      margin-top: 143px;
+      margin-bottom: 50px;
+
+      @include r($breakpoint-1) {
+        margin-top: 120px;
+        min-height: 262px;
+      }
+
+      @include r($breakpoint-2) {
+        margin-top: 82px;
+        max-width: 510px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+
+    &--1 {
+      display: inline;
+      padding-left: 24.5%;
+
+      @include r($breakpoint-1) {
+        padding-left: 22%;
+      }
+
+      @include r($breakpoint-4) {
+        padding-left: 35%;
+      }
+
+    }
+
+    &--2 {
+      margin-bottom: 25px;
+
+      @include r($breakpoint-4) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__first {
+    @include r($breakpoint-1) {
+      .col-lg-6 {
+        flex: 0 0 630px;
+      }
+    }
+
+    @include r($breakpoint-4) {
+      .col-lg-6 {
+        flex: 0 0 auto;
+      }
+    }
+
+    &-content {
+      @include r($breakpoint-2) {
+        margin-left: 28%;
+        transform: translateY(-18px);
+      }
+      @include r($breakpoint-4) {
+        margin-left: 0;
+        transform: translateY(0);
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__card {
+    @include r($breakpoint-2) {
+      margin-left: 38%;
+      transform: translateY(-18px);
+    }
+
+    @include r($breakpoint-4) {
+      margin-left: 0;
+      margin-top: 15px;
+      transform: translateY(0);
+    }
+  }
+
+  &__subtitle {
+    color: #D3D3D3;
+    @include r($breakpoint-4) {
+      line-height: 1.3;
+    }
+
+    &--1 {
+      position: relative;
+      padding-left: 35px;
+      margin-top: 50px;
+      max-width: 440px;
+
+      @include r($breakpoint-1) {
+        margin-top: 25px;
+        max-width: unset;
+        margin-left: 22%;
+        padding-left: 0;
+      }
+
+      @include r($breakpoint-4) {
+        margin-left: 30px;
+        margin-right: 42px;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 12px;
+        width: 18px;
+        height: 1px;
+        background-color: $white;
+
+        @include r($breakpoint-1) {
+          left: -30px;
+          top: 9px;
+        }
+      }
+
+      @include rmin($breakpoint-1) {
+        margin-left: calc(8.33333% + 80px);
+      }
+    }
+
+    &--2 {
+      margin-bottom: 25px;
+      max-width: 472px;
+
+      @include r($breakpoint-4) {
+        max-width: unset;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.info-slider {
+  margin-bottom: 28px;
+
+  &__wrapper {
+    position: relative;
+    margin-top: 120px;
+
+    @include r($breakpoint-1) {
+      margin-top: 63px;
+    }
+
+    .swiper-nav {
+      button {
+        align-items: center;
+      }
+    }
+  }
+
+  &__item {
+    min-height: 446px;
+    @include cv;
+
+    @include r($breakpoint-1) {
+      min-height: 380px;
+    }
+    @include r($breakpoint-2) {
+      min-height: 307px;
+    }
+    @include r($breakpoint-4) {
+      min-height: 146px;
+    }
+  }
+
+  &__stage {
+    position: relative;
+    width: 550px;
+    height: 1px;
+    background-color: #D9D9D9;
+    margin-right: 15px;
+
+    @include r($breakpoint-4) {
+      margin-right: 0;
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30%;
+      height: 3px;
+      background-color: $white;
+    }
+  }
+
+  &__paginator {
+    @include r($breakpoint-4) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @include r($breakpoint-2) {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__in {
+    @include r($breakpoint-2) {
+      margin-right: 15.7%;
+    }
+    @include r($breakpoint-4) {
+      margin-right: 40px;
+    }
+  }
+
+  &__actions {
+    @include r($breakpoint-2) {
+      position: static;
+    }
+  }
+}
+
+.home-news {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 1px solid $dark;
+    border-bottom: 1px solid $dark;
+
+    @include r($breakpoint-4) {
+      padding-top: 20px;
+      padding-bottom: 23px;
+    }
+
+  }
+
+  @include r($breakpoint-2) {
+    &__date {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .button-link {
+      margin-top: 20px;
+    }
+  }
+
+  @include r($breakpoint-4) {
+    &__date {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .button-link {
+      margin-top: 15px;
+    }
+
+    .section__title-spacing-3 {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.home-socials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 150px;
+  width: max-content;
+  margin-left: auto;
+
+  @include r($breakpoint-1) {
+    margin-top: 80px;
+  }
+
+  @include r($breakpoint-2) {
+    margin-left: 0;
+    width: auto;
+  }
+  @include r($breakpoint-4) {
+    grid-template-columns: auto;
+  }
+
+  .forum-h1 {
+    grid-column: 1/3;
+
+    @include r($breakpoint-4) {
+      grid-column: 1/2;
+      max-width: 70%;
+    }
+  }
+
+  @include r($breakpoint-4) {
+    &__item {
+      &:last-child {
+        margin-top: 20px;
+      }
+    }
+  }
+
+
+  &__link {
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+
+    svg {
+      stroke: $orange;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.swiper {
+  &-button {
+    &-prev,
+    &-next {
+      &::after {
+        display: none;
+      }
+
+      svg {
+        stroke: $darkGray;
+        @include ease;
+      }
+
+      &:hover {
+        svg {
+          stroke: $orange;
+        }
+      }
+
+      &.swiper-button-disabled {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.swiper-nav {
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+
+  button {
+    height: 20px;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    @include ease;
+
+    &:first-child:hover {
+      transform: translateX(-5px);
+    }
+
+    &:last-child:hover {
+      transform: translateX(5px);
+    }
+
+    &.swiper-button-disabled {
+      cursor: auto;
+      opacity: .3;
+      transform: translate(0) !important;
+    }
+  }
+}

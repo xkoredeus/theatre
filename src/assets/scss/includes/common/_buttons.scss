@@ -1,0 +1,193 @@
+button {
+  border: none;
+  outline: none;
+  box-shadow: unset;
+  background: none;
+}
+
+.button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  @include ease-long;
+  border-top: 1px solid $tr;
+  border-bottom: 1px solid $tr;
+
+  @include inter-h2-light;
+
+  @include r($breakpoint-4) {
+    font-size: 14px;
+    padding: 14px 0;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    @include ease-long;
+  }
+
+  &::before {
+    left: 0;
+    transform-origin: 100% 100%;
+  }
+
+  &::after {
+    right: 0;
+    transform-origin: 0 0;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+
+  &-primary {
+    color: $orange;
+    border-top-color: $orange;
+    border-bottom-color: $orange;
+
+    &::before,
+    &::after {
+      background-color: $orange;
+    }
+  }
+
+  &-secondary {
+    color: $white;
+    border-top-color: $white;
+    border-bottom-color: $white;
+
+    &::before,
+    &::after {
+      background-color: $white;
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.button-link {
+  position: relative;
+  @include inter-h2-light;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: -5px;
+    background-color: $tr;
+    @include ease-long;
+  }
+
+  span:last-child {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $tr;
+    border-radius: 50%;
+    //@include flex-center;
+    @include ease-long;
+  }
+
+  svg {
+    position: absolute;
+    width: 4px;
+    height: 7px;
+    @include ease-long;
+    @include center;
+  }
+
+  &-primary {
+    &::before {
+      background-color: #D8D8D8;
+    }
+
+    span:last-child {
+      border-color: $dark;
+    }
+
+    &:hover {
+      color: $dark;
+
+      &::before {
+        background-color: $dark;
+      }
+
+      span:last-child {
+        border-color: $dark;
+        background-color: $dark;
+      }
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &-secondary {
+    color: $white;
+
+    &::before {
+      background-color: $white;
+    }
+
+    span:last-child {
+      border-color: $white;
+
+      svg {
+        fill: $white;
+      }
+    }
+
+    &:hover {
+      color: $white;
+
+      span:last-child {
+        border-color: $orange;
+
+        svg {
+          fill: $orange;
+        }
+      }
+    }
+  }
+
+  &-thirdary {
+    color: $orange;
+
+    &::before {
+      background-color: $orange;
+    }
+
+    span:last-child {
+      border-color: $orange;
+
+      svg {
+        fill: $orange;
+      }
+    }
+
+    &:hover {
+      color: $orange;
+
+      opacity: .8;
+    }
+  }
+}

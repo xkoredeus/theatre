@@ -1,0 +1,136 @@
+<header class="header">
+    <div class="container">
+        <div class="header__in">
+            <nav class="header-nav">
+                <a class="header-nav__link" href="#">Репертуар</a>
+                <a class="header-nav__link" href="#">О театре</a>
+                <a class="header-nav__link" href="#">Контакты</a>
+                <a class="header-nav__link" href="#">Купить билет</a>
+            </nav>
+
+            <div class="header__logo-wrapper">
+                <a class="header__logo" href="#">
+                    <svg width="250" height="51">
+                        <use xlink:href="#logo"></use>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="header-actions">
+                <div class="header-actions__in">
+                    <a class="header-actions__card" href="#">
+                        <img src="{{root}}assets/img/pushkin-card.png" alt="pushkin card">
+                        <span>Пушкинская<br> карта</span>
+                    </a>
+                    <a href="#" class="header-actions__button">
+                        <svg width="28" height="28">
+                            <use xlink:href="#loupe"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="header-actions__button">
+                        <svg width="40" height="24" >
+                            <use xlink:href="#search"></use>
+                        </svg>
+                    </a>
+                </div>
+                <button class="header__burger js-toggle-menu">
+                    <svg width="46" height="21">
+                        <use xlink:href="#burger"></use>
+                    </svg>
+                    <svg width="34" height="33">
+                        <use xlink:href="#cross"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="menu" class="header-menu">
+            <div class="header-menu__in">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="header-menu__col">
+                                        <a class="header-menu__item header-menu__nav-link" href="#">АФИША</a>
+                                        <a class="header-menu__item header-menu__nav-link" href="#">ТРУППА</a>
+                                        <a class="header-menu__item header-menu__nav-link" href="#">НОВОСТИ</a>
+                                        <div class="header-menu__item header-menu__info">
+                                            <svg width="40" height="40">
+                                                <use xlink:href="#tel"></use>
+                                            </svg>
+                                            <div>
+                                                <a class="header-menu__info-title header-menu__title font-inter-regular header-menu__info-link mb-1" href="tel:88463333348">
+                                                    +7 (846) 333-33-48
+                                                </a>
+                                                <span>Касса</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="header-menu__col">
+                                        <a class="header-menu__item header-menu__nav-link" href="#">РЕПЕРТУАР</a>
+                                        <a class="header-menu__item header-menu__nav-link" href="#">О ТЕАТРЕ</a>
+                                        <a class="header-menu__item header-menu__nav-link" href="#">КОНТАКТЫ</a>
+                                        <div class="header-menu__item header-menu__socials">
+                                            <div class="header-menu__title">СОЦИАЛЬНЫЕ СЕТИ</div>
+                                            <div class="header-menu__socials-links">
+                                                <a class="header-menu__socials-link" href="#">
+                                                    <svg width="94" height="49">
+                                                        <use xlink:href="#vk"></use>
+                                                    </svg>
+                                                </a>
+                                                <a class="header-menu__socials-link" href="#">
+                                                    <svg width="65" height="55">
+                                                        <use xlink:href="#tg"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row header-menu__bottom">
+                                <div class="col-lg-6">
+                                    <div class="header-menu__item header-menu__info header-menu__info-address">
+                                        <svg width="40" height="54">
+                                            <use xlink:href="#geo"></use>
+                                        </svg>
+                                        <div>
+                                            <span class="header-menu__title font-inter-regular header-menu__info-title mb-1">
+                                                г. Самара, пл. Чапаева, д. 1.
+                                            </span>
+                                            <span>Касса работает ежедневно с 12.00 до 19:00, перерыв с 14 до 15 часов</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 header-menu__socials">
+                                    <div class="header-menu__title">СОЦИАЛЬНЫЕ СЕТИ</div>
+                                    <div class="header-menu__socials-links">
+                                        <a class="header-menu__socials-link" href="#">
+                                            <svg width="94" height="49">
+                                                <use xlink:href="#vk"></use>
+                                            </svg>
+                                        </a>
+                                        <a class="header-menu__socials-link" href="#">
+                                            <svg width="65" height="55">
+                                                <use xlink:href="#tg"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a class="header-menu__button button button-primary" href="#">Купить билеты</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="header-menu__picture" style="background-image: url({{root}}assets/img/menu-bg.jpg);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

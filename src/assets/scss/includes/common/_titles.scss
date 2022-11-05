@@ -1,0 +1,138 @@
+$breakpoint-1: 1575;
+$breakpoint-2: 1200;
+$breakpoint-3: 976;
+$breakpoint-4: 576;
+
+@mixin forum-h1 {
+  font-size: 64px;
+
+  @include r($breakpoint-1) {
+    font-size: 54px;
+  }
+  @include r(576) {
+    font-size: 28px;
+  }
+}
+@mixin forum-h2 {
+  font-size: 40px;
+
+  @include r($breakpoint-1) {
+    font-size: 36px;
+  }
+  @include r(576) {
+    font-size: 24px;
+  }
+}
+@mixin forum-h3 {
+  font-size: 36px;
+
+  @include r($breakpoint-1) {
+    font-size: 32px;
+  }
+  @include r(576) {
+    font-size: 20px;
+  }
+}
+@mixin forum-h4 {
+  font-size: 32px;
+
+  @include r($breakpoint-1) {
+    font-size: 24px;
+  }
+}
+@mixin forum-h5 {
+  font-size: 24px;
+
+  @include r($breakpoint-1) {
+    font-size: 20px;
+  }
+  @include r(576) {
+    font-size: 18px;
+  }
+}
+
+
+@mixin inter-h1 {
+  font-family: $font-inter;
+  font-size: 40px;
+  line-height: 1.2;
+
+  @include r($breakpoint-1) {
+    font-size: 32px;
+  }
+  @include r(576) {
+    font-size: 20px;
+  }
+}
+@mixin inter-h2 {
+  font-family: $font-inter;
+  font-size: 20px;
+  line-height: 1.2;
+
+  @include r($breakpoint-1) {
+    font-size: 16px;
+  }
+}
+
+@mixin inter-h1-light {
+  font-family: $font-inter-light;
+  font-size: 20px;
+  line-height: 1.2;
+
+  @include r($breakpoint-1) {
+    font-size: 16px;
+  }
+  @include r(576) {
+    font-size: 12px;
+  }
+}
+
+@mixin inter-h2-light {
+  font-family: $font-inter-light;
+  font-size: 18px;
+  line-height: 1.2;
+
+  @include r($breakpoint-1) {
+    font-size: 14px;
+  }
+  @include r(576) {
+    font-size: 12px;
+  }
+}
+
+@mixin inter-h3-light {
+  font-family: $font-inter-light;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.forum-h1 {
+  @include forum-h1;
+}
+.forum-h2 {
+  @include forum-h2;
+}
+.forum-h3 {
+  @include forum-h3;
+}
+.forum-h4 {
+  @include forum-h4;
+}
+.forum-h5 {
+  @include forum-h5;
+}
+.inter-h1 {
+  @include inter-h1;
+}
+.inter-h2 {
+  @include inter-h2;
+}
+.inter-h1-light {
+  @include inter-h1-light;
+}
+.inter-h2-light {
+  @include inter-h2-light;
+}
+.inter-h3-light {
+  @include inter-h3-light;
+}

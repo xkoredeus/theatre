@@ -1,0 +1,16 @@
+$font-forum: 'Forum';
+$font-inter: 'Inter-Regular';
+$font-inter-bold: 'Inter-Bold';
+$font-inter-light: 'Inter-Light';
+
+.font-bold {
+  font-family: $font-inter-bold;
+}
+
+.font-inter-light {
+  font-family: $font-inter-light;
+}
+
+.font-inter-regular {
+  font-family: $font-inter;
+}
