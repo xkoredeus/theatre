@@ -84,6 +84,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  padding: 0;
 
   &::before {
     position: absolute;
@@ -188,6 +189,28 @@ button {
       color: $orange;
 
       opacity: .8;
+    }
+  }
+}
+
+.button-sort {
+  font-size: 20px;
+
+  @include r($breakpoint-1) {
+    font-size: 15px;
+  }
+
+  svg {
+    width: 7px;
+    height: 4px;
+  }
+
+  &:hover {
+    span:last-child {
+      background-color: $tr;
+    }
+    svg {
+      fill: $dark;
     }
   }
 }

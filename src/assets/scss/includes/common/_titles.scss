@@ -9,7 +9,7 @@ $breakpoint-4: 576;
   @include r($breakpoint-1) {
     font-size: 54px;
   }
-  @include r(576) {
+  @include r($breakpoint-4) {
     font-size: 28px;
   }
 }
@@ -19,7 +19,7 @@ $breakpoint-4: 576;
   @include r($breakpoint-1) {
     font-size: 36px;
   }
-  @include r(576) {
+  @include r($breakpoint-4) {
     font-size: 24px;
   }
 }
@@ -29,7 +29,7 @@ $breakpoint-4: 576;
   @include r($breakpoint-1) {
     font-size: 32px;
   }
-  @include r(576) {
+  @include r($breakpoint-4) {
     font-size: 20px;
   }
 }
@@ -46,8 +46,16 @@ $breakpoint-4: 576;
   @include r($breakpoint-1) {
     font-size: 20px;
   }
-  @include r(576) {
+  @include r($breakpoint-4) {
     font-size: 18px;
+  }
+}
+
+@mixin forum-h6 {
+  font-size: 16px;
+
+  @include r($breakpoint-4) {
+    font-size: 14px;
   }
 }
 
@@ -60,7 +68,7 @@ $breakpoint-4: 576;
   @include r($breakpoint-1) {
     font-size: 32px;
   }
-  @include r(576) {
+  @include r($breakpoint-4) {
     font-size: 20px;
   }
 }
@@ -82,7 +90,7 @@ $breakpoint-4: 576;
   @include r($breakpoint-1) {
     font-size: 16px;
   }
-  @include r(576) {
+  @include r($breakpoint-4) {
     font-size: 12px;
   }
 }
@@ -95,7 +103,7 @@ $breakpoint-4: 576;
   @include r($breakpoint-1) {
     font-size: 14px;
   }
-  @include r(576) {
+  @include r($breakpoint-4) {
     font-size: 12px;
   }
 }
@@ -120,6 +128,9 @@ $breakpoint-4: 576;
 }
 .forum-h5 {
   @include forum-h5;
+}
+.forum-h6 {
+  @include forum-h6;
 }
 .inter-h1 {
   @include inter-h1;

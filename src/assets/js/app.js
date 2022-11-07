@@ -1,8 +1,8 @@
-$(() => {
-    $(window).on('load', function hidePreloader() {
-        $('.preloader__wrp').fadeOut();
-    });
-});
+// $(() => {
+//     $(window).on('load', function hidePreloader() {
+//         $('.preloader__wrp').fadeOut();
+//     });
+// });
 
 $(() => {
     $('.js-toggle-menu').on('click', function () {
@@ -11,6 +11,13 @@ $(() => {
         $(this).toggleClass('header__burger--active');
         $('body').toggleClass('fixed');
     });
+
+    $('.js-scrollto-news').on('click', function () {
+        const offset = $('#news-info').offset().top;
+        $('html, body').animate({
+            scrollTop: offset
+        }, 700);
+    })
 
     const offerCard = new Swiper(".js-offer-card-slider", {
         speed: 1500,

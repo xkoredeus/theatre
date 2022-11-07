@@ -42,7 +42,7 @@
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 10%;
+  gap: 11%;
   row-gap: 30px;
 
   @include r($breakpoint-2) {
@@ -147,14 +147,19 @@
 
   &__list {
     display: flex;
+    justify-content: space-between;
     gap: 37px;
 
     @include r(1350) {
       gap: 15px;
     }
 
-    @include r($breakpoint-4) {
+    @include r($breakpoint-2) {
       gap: 37px;
+      justify-content: flex-start;
+    }
+
+    @include r($breakpoint-4) {
       justify-content: center;
     }
   }

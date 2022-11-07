@@ -16,3 +16,9 @@
 .ttn {
   text-transform: none !important;
 }
+
+.tal-mobile {
+  @include r($breakpoint-4) {
+    text-align: left !important;
+  }
+}
