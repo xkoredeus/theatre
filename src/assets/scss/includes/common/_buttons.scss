@@ -95,6 +95,10 @@ button {
     bottom: -5px;
     background-color: $tr;
     @include ease-long;
+
+    @include r($breakpoint-4) {
+      bottom: -3px;
+    }
   }
 
   span:last-child {

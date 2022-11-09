@@ -17,7 +17,7 @@ $(() => {
         $('html, body').animate({
             scrollTop: offset
         }, 700);
-    })
+    });
 
     const offerCard = new Swiper(".js-offer-card-slider", {
         speed: 1500,
@@ -33,6 +33,7 @@ $(() => {
             prevEl: ".js-offer-card-prev",
         },
     });
+
     const boardSlider = new Swiper(".js-board-slider", {
         speed: 1500,
         breakpoints: {
@@ -82,6 +83,58 @@ $(() => {
         navigation: {
             nextEl: ".js-info-next",
             prevEl: ".js-info-prev",
+        },
+    });
+    const perfomanceSlider = new Swiper('.js-perfomance-top-slider', {
+        speed: 1500,
+        freeMode: false,
+        watchSlidesProgress: true,
+        slidesPerView: 1,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        navigation: {
+            nextEl: '.js-perfomance-top-prev',
+            prevEl: '.js-perfomance-top-next',
+        },
+        scrollbar: {
+            el: '.js-perfomance-scrollbar',
+            hide: false,
+            snapOnRelease: true,
+            draggable: true,
+        },
+    });
+
+    const perfomanceOthersSlider = new Swiper('.js-perfomance-others-slider', {
+        speed: 1500,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 32,
+            },
+            1200: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+            },
+            1560: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+        },
+        scrollbar: {
+            el: '.js-perfomance-others-scrollbar',
+            hide: false,
+            snapOnRelease: true,
+            draggable: true,
+        },
+        navigation: {
+            nextEl: ".js-perfomance-others-next",
+            prevEl: ".js-perfomance-others-prev",
         },
     });
 });

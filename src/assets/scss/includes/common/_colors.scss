@@ -2,6 +2,7 @@ $dark: #3E3E3E;
 $orange: #FF4605;
 $gray: #F6F6F6;
 $darkGray: #9B9B9B;
+$midGray: #636363;
 $tr: transparent;
 
 
@@ -15,4 +16,8 @@ $tr: transparent;
 
 .color-darkGray {
   color: $darkGray
+}
+
+.color-midGray {
+  color: $midGray
 }
