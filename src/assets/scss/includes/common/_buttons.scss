@@ -218,3 +218,12 @@ button {
     }
   }
 }
+
+.link {
+  color: $orange;
+  border-bottom: 1px solid $orange;
+
+  &:hover {
+    border-bottom-color: $dark;
+  }
+}

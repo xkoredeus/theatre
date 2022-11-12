@@ -114,6 +114,20 @@ $breakpoint-4: 576;
   line-height: 1.2;
 }
 
+@mixin inter-h4-light {
+  font-family: $font-inter-light;
+  line-height: 1.3;
+  font-size: 20px;
+
+  @include r($breakpoint-1) {
+    font-size: 16px;
+  }
+
+  @include r($breakpoint-4) {
+    font-size: 12px;
+  }
+}
+
 .forum-h1 {
   @include forum-h1;
 }
@@ -146,4 +160,7 @@ $breakpoint-4: 576;
 }
 .inter-h3-light {
   @include inter-h3-light;
+}
+.inter-h4-light {
+  @include inter-h4-light;
 }

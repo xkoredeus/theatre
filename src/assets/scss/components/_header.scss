@@ -208,9 +208,24 @@
   opacity: 0;
   visibility: hidden;
 
+  .container {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    //transition-delay: 1.5s;
+    @include ease-long;
+  }
+
   &--active {
     opacity: 1;
     visibility: visible;
+
+    .container {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition-delay: .3s;
+    }
   }
 
   &__in {
@@ -382,10 +397,17 @@
     &-link {
       svg {
         stroke: $orange;
+        @include ease-long;
 
         @include r($breakpoint-1) {
           max-height: 26px;
           width: auto;
+        }
+      }
+
+      &:hover {
+        svg {
+          stroke: $dark;
         }
       }
     }

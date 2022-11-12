@@ -1460,4 +1460,175 @@
       }
     }
   }
+
+  &__button {
+    @include rmin(731) {
+      display: none;
+    }
+  }
+}
+
+.documents-picture {
+  @include cv;
+  min-height: 445px;
+
+  @include r($breakpoint-1) {
+    min-height: 341px
+  }
+
+  @include r($breakpoint-3) {
+    min-height: 380px
+  }
+
+  @include r($breakpoint-4) {
+    min-height: 280px
+  }
+}
+
+.documents-top {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #DADADA;
+  margin-bottom: 40px;
+
+  @include r($breakpoint-4) {
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.document {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #636363;
+
+  display: grid;
+  grid-template-columns: 1fr 15px;
+  grid-gap: 15px;
+  margin-bottom: 40px;
+
+  &:hover {
+    color: $dark;
+
+    border-bottom-color: $orange;
+  }
+
+  @include r($breakpoint-1) {
+    margin-bottom: 32px;
+  }
+
+  @include r($breakpoint-2) {
+    margin-bottom: 30px;
+  }
+
+  @include r($breakpoint-4) {
+    margin-bottom: 20px;
+    grid-template-columns: 1fr 10px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    @include r($breakpoint-4) {
+      font-size: 12px;
+    }
+  }
+}
+
+
+.params-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+
+  @include r($breakpoint-4) {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    font-family: $font-inter;
+    font-size: 16px;
+    padding: 19px 17px;
+    border-radius: 100px;
+    border: 2px solid $orange;
+
+    @include r($breakpoint-2) {
+      font-size: 14px;
+    }
+
+    @include r($breakpoint-4) {
+      font-size: 12px;
+    }
+
+    &--here {
+      color: $white !important;
+      background-color: $orange;
+      cursor: auto !important;
+    }
+  }
+}
+
+.params-item {
+  margin-bottom: 40px;
+
+  &__picture {
+    min-height: 388px;
+    @include cv;
+    margin-bottom: 30px;
+    filter: blur(2px);
+
+    @include r($breakpoint-1) {
+      min-height: 277px;
+    }
+
+    @include r($breakpoint-4) {
+      min-height: 220px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #636363;
+
+    .button-link {
+      margin-top: 12px;
+
+      @include r($breakpoint-4) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.scheme-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+.scheme-button {
+  max-width: 370px;
+  margin: auto;
+}
+
+
+.list {
+  li {
+    margin-bottom: 10px;
+    list-style-type: circle;
+
+    ul {
+      margin-top: 10px;
+    }
+  }
 }

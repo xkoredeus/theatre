@@ -1,0 +1,230 @@
+.history-picture {
+  max-width: 100%;
+  height: auto;
+
+  @include r($breakpoint-1) {
+    max-height: 470px;
+  }
+
+  @include r($breakpoint-2) {
+    max-height: 350px;
+    transform: rotate(0) !important;
+  }
+
+  @include r($breakpoint-4) {
+    max-height: 276px;
+  }
+
+  &--rotate-right {
+    transform: rotate(3deg);
+  }
+  &--rotate-left {
+    transform: rotate(-3deg);
+  }
+}
+
+.history {
+  &--padding-left {
+    margin-left: 8.77%;
+
+    @include r($breakpoint-2) {
+      margin-left: 0;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    @include center;
+    max-width: 95%;
+    max-height: 90%;
+
+    @include r($breakpoint-2) {
+      display: none;
+    }
+  }
+}
+
+.history-info {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #9B9B9B;
+
+  @include r($breakpoint-2) {
+    padding-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .forum-h1 {
+    line-height: .8;
+  }
+
+  .forum-h2 {
+    line-height: .9;
+
+    @include r($breakpoint-1) {
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    @include r($breakpoint-4) {
+      font-size: 20px;
+      line-height: 1.1;
+    }
+  }
+}
+
+.history-top {
+  position: relative;
+  .container {
+    position: relative;
+  }
+
+  .history__line {
+    max-height: unset;
+    height: calc(100% - 315px);
+  }
+
+  &--4 {
+    .history-picture {
+      &:last-child {
+        position: absolute;
+        left: -8.33%;
+        top: 150px;
+
+        @include r($breakpoint-1) {
+          max-width: 220px;
+        }
+
+        @include r($breakpoint-2) {
+          position: relative;
+          left: auto;
+          top: auto;
+          margin-top: -30%;
+        }
+
+        @include r($breakpoint-4) {
+          max-width: 118px;
+          margin-top: -15%;
+        }
+      }
+      &:first-child {
+        @include r($breakpoint-2) {
+          padding-left: 12.33%;
+        }
+      }
+    }
+  }
+}
+
+.color-lolGray {
+  color: #D3D3D3;
+}
+
+.history-bottom {
+  color: $white;
+  background-color: #222222;
+
+  &__in {
+    position: relative;
+
+    & > section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .history__line {
+      max-height: unset;
+      height: calc(100% - 190px);
+    }
+
+    &:nth-child(2) {
+      .history__line {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    @include center;
+    max-width: 95%;
+    max-height: 90%;
+  }
+
+  &--4 {
+    margin-top: -70px;
+
+    @include r($breakpoint-1) {
+      margin-top: -40px;
+    }
+
+    @include r($breakpoint-2) {
+      margin-top: 0;
+    }
+  }
+
+  &--10 {
+    .history-info {
+      margin-bottom: 40px;
+
+      @include r($breakpoint-2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--12 {
+    .history-picture {
+      &:first-child {
+        @include r($breakpoint-2) {
+          padding-left: 80px;
+        }
+      }
+      &:last-child {
+        position: absolute;
+        left: -80px;
+        bottom: -30px;
+
+        @include r($breakpoint-1) {
+          max-width: 161px;
+          height: auto;
+        }
+
+        @include r($breakpoint-2) {
+          position: relative;
+          left: auto;
+          bottom: auto;
+          margin-top: -89px;
+        }
+
+        @include r($breakpoint-4) {
+          max-width: 123px;
+
+        }
+      }
+
+      &__wrapper {
+        position: relative;
+
+        @include r($breakpoint-2) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+  &--18 {
+    .history-info {
+      margin-top: -20%;
+
+      @include r($breakpoint-2) {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__border {
+    border-bottom: 1px solid #4E4E4E;
+  }
+}

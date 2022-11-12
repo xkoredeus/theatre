@@ -23,9 +23,36 @@
   &__wrapper {
     position: relative;
     margin-bottom: 20px;
+    overflow: hidden;
 
     @include r($breakpoint-4) {
       margin-bottom: 15px;
+    }
+
+    .swiper-scrollbar {
+      position: absolute;
+      z-index: 1;
+      left: 40px;
+      bottom: 50px;
+      width: 320px;
+
+      @include r($breakpoint-1) {
+        width: 221px;
+      }
+
+      @include r($breakpoint-4) {
+        display: none;
+      }
+
+      .swiper-scrollbar-drag {
+        background: $orange;
+      }
+    }
+
+    .swiper-slide-active {
+      .offer-top-slider__stage-picture {
+        opacity: 1;
+      }
     }
   }
 
@@ -45,24 +72,6 @@
   }
 
   &__stage {
-    position: relative;
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-    border-radius: 5px;
-    overflow: hidden;
-
-    span {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 30%;
-      height: 100%;
-      background-color: $orange;
-
-      @include ease-long;
-    }
-
     &-wrapper {
       position: absolute;
       left: 40px;
@@ -79,6 +88,9 @@
       @include cv;
       border: 1px solid rgba(255,255,255,0.5);
       margin-bottom: 18px;
+      @include ease-long;
+
+      opacity: 0;
 
       @include r($breakpoint-1) {
         width: 221px;
@@ -102,6 +114,18 @@
     align-items: flex-start;
     gap: 15px;
   }
+  
+  &__wrapper {
+    overflow: hidden;
+
+    .swiper-slide-active {
+      .offer-bottom-slider__date,
+      .offer-bottom-slider__info {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
 
   &__date {
     position: relative;
@@ -109,10 +133,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    transform: translateX(-100%);
+    @include ease-long;
+    opacity: 0;
 
     @include r($breakpoint-4) {
       order: 2;
       text-align: right;
+      transform: translateX(100%);
     }
 
     &::before {
@@ -128,11 +156,15 @@
 
   &__info {
     text-align: right;
+    transform: translateX(100%);
+    @include ease-long;
+    opacity: 0;
 
     @include r($breakpoint-4) {
       order: 1;
       text-align: left;
       max-width: 50%;
+      transform: translateX(-100%);
     }
   }
 }
@@ -151,6 +183,7 @@
   background-color: $white;
   @include height;
   margin-bottom: 20px;
+  overflow: hidden;
 
   @include r($breakpoint-1) {
     &__wrapper {
@@ -172,6 +205,23 @@
     width: 100%;
     padding: 30px;
     top: 0;
+
+    .swiper-slide-active {
+      .offer-card__info-date,
+      .offer-card__info-title {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .offer-card__list-item {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .offer-card__list::before {
+        transform: scaleY(1);
+      }
+    }
   }
 
   .swiper-slide {
@@ -179,13 +229,13 @@
   }
 
   &__item {
+    position: relative;
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
   }
 
   &__list {
-    position: relative;
     font-family: $font-inter;
     @include inter-h2-light;
     display: flex;
@@ -200,14 +250,21 @@
       position: absolute;
       content: '';
       width: 1px;
-      height: calc(100% + 6px);
-      top: 0;
+      height: calc(100% - 131px);
+      top: 30px;
       right: 5px;
       background-color: #D8D8D8;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      //transition-delay: 1s;
+      transition: .5s all ease-in;
     }
 
     &-title {
-      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 30px;
+      background-color: $white;
+      z-index: 1;
     }
 
     &-item {
@@ -218,6 +275,25 @@
       background-color: #fff;
       padding-top: 9px;
       padding-bottom: 9px;
+      @include ease-long;
+      transform: translateY(-5px);
+      opacity: 0;
+
+      &:nth-child(2) {
+        transition-delay: .2s;
+      }
+      &:nth-child(3) {
+        transition-delay: .4s;
+      }
+      &:nth-child(4) {
+        transition-delay: .6s;
+      }
+      &:nth-child(4) {
+        transition-delay: .8s;
+      }
+      &:nth-child(5) {
+        transition-delay: 1s;
+      }
 
       &-border {
         position: relative;
@@ -249,9 +325,23 @@
         gap: 50px;
       }
 
+      .inter-h1 {
+        @include r(1350) {
+          font-size: 24px;
+        }
+      }
+
       .forum-h1 {
         position: relative;
         margin-bottom: 16px;
+
+        @include r(1700) {
+          font-size: 54px;
+        }
+
+        @include r(1350) {
+          font-size: 40px;
+        }
 
         &::before {
           position: absolute;
@@ -265,7 +355,17 @@
     }
 
     &-date {
-      margin-bottom: 17px;
+      background-color: $white;
+      opacity: 0;
+      transform: translateX(160%);
+      padding-bottom: 17px;
+      @include ease-long;
+    }
+
+    &-title {
+      opacity: 0;
+      transform: translateX(-120%);
+      @include ease-long;
     }
   }
 
@@ -891,6 +991,10 @@
 .info-slider {
   margin-bottom: 28px;
 
+  @include r($breakpoint-4) {
+    margin-bottom: 24px;
+  }
+
   &__wrapper {
     position: relative;
     margin-top: 120px;
@@ -921,27 +1025,6 @@
     }
   }
 
-  &__stage {
-    position: relative;
-    width: 550px;
-    height: 1px;
-    background-color: #D9D9D9;
-    margin-right: 15px;
-
-    @include r($breakpoint-4) {
-      margin-right: 0;
-    }
-
-    span {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 30%;
-      height: 3px;
-      background-color: $white;
-    }
-  }
-
   &__paginator {
     @include r($breakpoint-4) {
       display: none;
@@ -957,11 +1040,31 @@
   }
 
   &__in {
+    .swiper-scrollbar {
+      max-width: 550px;
+
+      @include r($breakpoint-2) {
+        max-width: unset;
+        margin-right: 120px;
+      }
+
+      @include r($breakpoint-4) {
+        margin-right: 0;
+        min-width: calc(100% + 40px);
+      }
+    }
+
     @include r($breakpoint-2) {
       margin-right: 15.7%;
     }
     @include r($breakpoint-4) {
       margin-right: 40px;
+    }
+  }
+
+  &__paginatior {
+    @include r($breakpoint-4) {
+      display: none;
     }
   }
 
