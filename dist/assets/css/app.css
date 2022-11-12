@@ -6587,9 +6587,8 @@ a:hover {
   padding-top: 35px;
   padding-bottom: 35px;
   border-bottom: 1px solid #D1D1D1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -6597,8 +6596,15 @@ a:hover {
 
 @media only screen and (max-width: 1200px) {
   .header__in {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header__in {
     padding-top: 30px;
     padding-bottom: 20px;
+    gap: 15px;
   }
 }
 
@@ -6611,6 +6617,12 @@ a:hover {
 
 .header__logo-wrapper {
   text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header__logo-wrapper {
+    text-align: left;
+  }
 }
 
 .header__logo svg {
@@ -6638,9 +6650,7 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   gap: 50px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  white-space: nowrap;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -6691,9 +6701,6 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   gap: 50px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 @media only screen and (max-width: 768px) {
