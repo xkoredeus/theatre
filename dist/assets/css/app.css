@@ -6252,6 +6252,10 @@ button {
   background-color: #D8D8D8;
 }
 
+.button-link-primary span:first-child {
+  color: #3E3E3E;
+}
+
 .button-link-primary span:last-child {
   border-color: #3E3E3E;
 }
@@ -9582,6 +9586,13 @@ div.pagination ul.pagination li:hover.page-link {
   }
 }
 
+@media only screen and (max-width: 576px) {
+  .item-picture {
+    min-height: 315px;
+    max-width: 226px;
+  }
+}
+
 .item-title {
   color: #FF4605;
   margin-bottom: 10px;
@@ -10535,9 +10546,30 @@ div.pagination ul.pagination li:hover.page-link {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .perfomance-card__info-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .perfomance-card__info .forum-h4 {
     font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 976px) {
+  .perfomance-card__row {
+    padding-bottom: 80px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .perfomance-card__row {
+    padding-bottom: 40px;
   }
 }
 
@@ -10627,6 +10659,12 @@ div.pagination ul.pagination li:hover.page-link {
 .perfomance-info {
   padding-bottom: 10px;
   border-bottom: 1px solid #636363;
+}
+
+@media only screen and (max-width: 576px) {
+  .perfomance-info {
+    margin-bottom: 20px;
+  }
 }
 
 .perfomance-info__subtitle {

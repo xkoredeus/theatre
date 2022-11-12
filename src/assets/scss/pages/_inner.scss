@@ -412,6 +412,11 @@
   @include r($breakpoint-1) {
     min-height: 435px;
   }
+  
+  @include r($breakpoint-4) {
+    min-height: 315px;
+    max-width: 226px;
+  }
 }
 
 .item-title {
@@ -1137,6 +1142,16 @@
     right: 0;
     top: 0;
   }
+
+  &-wrapper {
+    @include r($breakpoint-2) {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
   @include r($breakpoint-4) {
     .forum-h4 {
       font-size: 16px;
@@ -1145,6 +1160,15 @@
 }
 
 .perfomance-card__row {
+
+  @include r($breakpoint-3) {
+    padding-bottom: 80px;
+  }
+
+  @include r($breakpoint-4) {
+    padding-bottom: 40px;
+  }
+
   @include r($breakpoint-4) {
     flex-direction: column;
     justify-content: flex-end;
@@ -1210,6 +1234,10 @@
 .perfomance-info {
   padding-bottom: 10px;
   border-bottom: 1px solid #636363;
+
+  @include r($breakpoint-4) {
+    margin-bottom: 20px;
+  }
 
   &__subtitle {
     margin-bottom: 10px;
