@@ -1,27 +1,25 @@
-$(() => {
-    $(window).on('load', function hidePreloader() {
-        $('.preloader__wrapper').removeClass('preloader-is-loading');
+$(window).on('load', function hidePreloader() {
+    $('.preloader__wrapper').removeClass('preloader-is-loading');
 
-        gsap.timeline({
-            defaults: {
-                ease: "power3.inOut",
-            },
-            onComplete: function () {
-                $('body').removeClass('fixed');
-                $('.preloader__wrapper').fadeOut();
-            }
+    gsap.timeline({
+        defaults: {
+            ease: "power3.inOut",
+        },
+        onComplete: function () {
+            $('body').removeClass('fixed');
+            $('.preloader__wrapper').fadeOut();
+        }
+    })
+        .to('.preloader__house-icon', 1, {
+            x: 0,
         })
-            .to('.preloader__house-icon', 1, {
-                x: 0,
-            })
-            .to('.preloader__title', 1.2, {
-                x: 0,
-            }, "-=0.1")
-            .to('.preloader__wrapper', 1.5, {
-                y: '-102%'
-            }, "+=0.5");
+        .to('.preloader__title', 1.2, {
+            x: 0,
+        }, "-=0.1")
+        .to('.preloader__wrapper', 1.5, {
+            y: '-102%'
+        }, "+=0.5");
 
-    });
 });
 
 $(() => {
