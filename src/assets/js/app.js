@@ -1,4 +1,4 @@
-$(window).on('load', function hidePreloader() {
+window.onload = function () {
     $('.preloader__wrapper').removeClass('preloader-is-loading');
 
     gsap.timeline({
@@ -19,8 +19,8 @@ $(window).on('load', function hidePreloader() {
         .to('.preloader__wrapper', 1.5, {
             y: '-102%'
         }, "+=0.5");
-
-});
+}
+// $(window).on('load', function hidePreloader() {});
 
 $(() => {
     $('.js-toggle-menu').on('click', function () {
