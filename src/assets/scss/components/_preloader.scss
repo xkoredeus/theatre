@@ -1,6 +1,4 @@
 .preloader {
-  opacity: 0;
-
   &__wrapper {
     background: #3E3E3E;
     position: fixed;
@@ -32,10 +30,11 @@
     }
 
     &-icon {
-      transform: translateX(136px);
+      transform: translateX(156px);
 
       @include r($breakpoint-4) {
         width: 100px;
+        transform: translateX(96px);
       }
     }
 
