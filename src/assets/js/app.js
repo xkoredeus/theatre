@@ -1,8 +1,28 @@
-// $(() => {
-//     $(window).on('load', function hidePreloader() {
-//         $('.preloader__wrp').fadeOut();
-//     });
-// });
+$(() => {
+    $(window).on('load', function hidePreloader() {
+        $('.preloader__wrapper').removeClass('preloader-is-loading');
+
+        gsap.timeline({
+            defaults: {
+                ease: "power3.inOut",
+            },
+            onComplete: function () {
+                $('body').removeClass('fixed');
+                $('.preloader__wrapper').fadeOut();
+            }
+        })
+            .to('.preloader__house-icon', 1, {
+                x: 0,
+            })
+            .to('.preloader__title', 1.2, {
+                x: 0,
+            }, "-=0.1")
+            .to('.preloader__wrapper', 1.5, {
+                y: '-102%'
+            }, "+=0.5");
+
+    });
+});
 
 $(() => {
     $('.js-toggle-menu').on('click', function () {
@@ -44,6 +64,27 @@ $(() => {
         $('html, body').animate({
             scrollTop: offset
         }, 1000);
+    });
+
+    const offerSlider = new Swiper(".js-offer-top-slider", {
+        speed: 2000,
+        slidesPerView: 1,
+        watchSlidesProgress: true,
+        navigation: {
+            nextEl: ".js-offer-next",
+            prevEl: ".js-offer-prev",
+        },
+        scrollbar: {
+            el: '.js-offer-top-scrollbar',
+            hide: false,
+            snapOnRelease: true,
+            draggable: true,
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+
     });
 
     const offerCard = new Swiper(".js-offer-card-slider", {
@@ -302,43 +343,4 @@ $(() => {
     // });
 });
 
-
-var offerBottom = new Swiper(".js-offer-top-slider", {
-    speed: 2000,
-    slidesPerView: 1,
-    watchSlidesProgress: true,
-    scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: false,
-        draggable: true,
-    },
-    effect: 'fade',
-    fadeEffect: {
-        crossFade: true
-    },
-
-});
-var offerTop = new Swiper(".js-offer-bottom-slider", {
-    speed: 2000,
-    freeMode: false,
-    watchSlidesProgress: true,
-    slidesPerView: 1,
-    effect: 'fade',
-    fadeEffect: {
-        crossFade: true
-    },
-    navigation: {
-        nextEl: ".js-offer-next",
-        prevEl: ".js-offer-prev",
-    },
-    scrollbar: {
-        el: '.js-offer-top-scrollbar',
-        hide: false,
-        snapOnRelease: true,
-        draggable: true,
-    },
-});
-
-offerTop.controller.control = offerBottom;
-offerBottom.controller.control = offerTop;
 

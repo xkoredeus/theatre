@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
 </head>
 
-<body>
+<body class="fixed">
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
 
     <div class="layout">
+
+        {{> preloader}}
 
         {{> header}}
 

@@ -7884,11 +7884,8 @@ div.pagination ul.pagination li:hover.page-link {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
   -webkit-transition: .6s all ease;
   transition: .6s all ease;
-  opacity: 0;
 }
 
 @media only screen and (max-width: 576px) {
@@ -7897,8 +7894,6 @@ div.pagination ul.pagination li:hover.page-link {
         -ms-flex-order: 2;
             order: 2;
     text-align: right;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
   }
 }
 
@@ -7914,11 +7909,18 @@ div.pagination ul.pagination li:hover.page-link {
 
 .offer-bottom-slider__info {
   text-align: right;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
   -webkit-transition: .6s all ease;
   transition: .6s all ease;
-  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 @media only screen and (max-width: 576px) {
@@ -7928,9 +7930,20 @@ div.pagination ul.pagination li:hover.page-link {
             order: 1;
     text-align: left;
     max-width: 50%;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
+}
+
+@media only screen and (max-width: 576px) {
+  .offer-bottom-slider__info a {
+    margin-bottom: 10px;
+  }
+}
+
+.offer-bottom-slider__info a:hover {
+  color: #3E3E3E;
 }
 
 @media only screen and (max-width: 1575px) {
@@ -8199,6 +8212,10 @@ div.pagination ul.pagination li:hover.page-link {
           transform: translateX(-120%);
   -webkit-transition: .6s all ease;
   transition: .6s all ease;
+}
+
+.offer-card__info-title a:hover {
+  color: #3E3E3E;
 }
 
 .offer-card__nav {
