@@ -14,6 +14,14 @@
     }
   }
 
+  &--search {
+    @include r($breakpoint-4) {
+      .header-menu {
+        padding-top: 140px;
+      }
+    }
+  }
+
   &__in {
     position: relative;
     padding-top: 35px;
@@ -92,6 +100,7 @@
 }
 
 .header-actions {
+  //position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -143,6 +152,114 @@
 
     &:hover {
       stroke: $orange;
+    }
+  }
+}
+
+.header-search {
+  position: absolute;
+  width: 100%;
+  max-width: calc(33% - 20px);
+  right: 0;
+  bottom: -22px;
+  z-index: 1;
+
+  opacity: 0;
+  visibility: hidden;
+  @include ease;
+
+  @include r($breakpoint-1) {
+    max-width: calc(41.6% - 62px);
+  }
+
+  @include r($breakpoint-2) {
+    max-width: 60%;
+    bottom: -30px;
+  }
+
+  @include r($breakpoint-4) {
+    max-width: 100%;
+    bottom: -110px;
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.search-page-pagetitle__in {
+  @include r($breakpoint-4) {
+    padding-bottom: 0;
+  }
+}
+
+.search {
+  @include ease-long;
+
+  &__in {
+    position: relative;
+    background-color: $white;
+  }
+
+  &__input {
+    padding: 14px;
+    width: calc(100% - 78px);
+
+    @include r($breakpoint-4) {
+      width: calc(100% - 45px);
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 12px;
+
+    @include r($breakpoint-4) {
+      right: 6px;
+      gap: 7px
+    }
+
+    & > button {
+      @include r($breakpoint-4) {
+        svg {
+          max-width: 15px;
+          max-height: 15px;
+        }
+      }
+
+
+      &:first-child {
+        svg {
+          fill: none;
+          stroke: $dark;
+        }
+
+        &:hover {
+          svg {
+            stroke: $orange;
+          }
+        }
+      }
+      &:last-child {
+        svg {
+          fill: $dark;
+        }
+
+        &:hover {
+          svg {
+            fill: $orange;
+          }
+        }
+      }
+    }
+
+    svg {
+      @include ease-long;
     }
   }
 }

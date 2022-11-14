@@ -10,6 +10,26 @@ $(() => {
         $('.header').toggleClass('header--active');
         $(this).toggleClass('header__burger--active');
         $('body').toggleClass('fixed');
+
+        if ($(window).width() < 576) {
+            $('.header.header--search').removeClass('header--search');
+            $('.header-search.header-search--active').removeClass('header-search--active');
+        }
+    });
+
+    $('.js-toggle-search').on('click', function () {
+        $('.header-search').toggleClass('header-search--active');
+
+        if ($(window).width() < 576) {
+            $('.header').toggleClass('header--search');
+        }
+    });
+
+    $(document).on('click', function (e) {
+        const container = $('.header');
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.header-search').removeClass('header-search--active');
+        }
     });
 
     $('.js-scrollto-news').on('click', function () {
@@ -160,6 +180,42 @@ $(() => {
         },
     });
 
+    gsap.timeline({
+        defaults: {
+            ease: "power3.inOut",
+        },
+        scrollTrigger: {
+            trigger: $('.info'),
+            start: "10% center",
+            end: "50% center",
+            scrub: true,
+        }
+    })
+        .from('.info__picture--1', 1, {
+            yPercent: 20,
+        })
+        .from('.info__first-content', 1, {
+            yPercent: -30
+        }, "-=1");
+
+    gsap.timeline({
+        defaults: {
+            ease: "power3.inOut",
+        },
+        scrollTrigger: {
+            trigger: $('.info'),
+            start: "30% center",
+            end: "70% center",
+            scrub: true,
+        }
+    })
+        .from('.info__picture--2', 1, {
+            yPercent: -20,
+        })
+        .from('.info__card', 1, {
+            yPercent: 20
+        }, "-=1");
+
     gsap.utils.toArray('.js-about-animation > section').forEach((el) => {
         gsap.timeline({
             defaults: {
@@ -215,37 +271,6 @@ $(() => {
             })
     });
 
-    $(() => {
-        // var el = document.querySelector('payment');
-        // var rect = el.getBoundingClientRect();
-        // var mouse = {x: 0, y: 0, moved: false};
-        //
-        // $(".payment").mousemove(function(e) {
-        //     mouse.moved = true;
-        //     mouse.x = e.clientX - rect.left;
-        //     mouse.y = e.clientY - rect.top;
-        // });
-        //
-        // // Ticker event will be called on every frame
-        // TweenLite.ticker.addEventListener('tick', function(){
-        //     if (mouse.moved){
-        //         parallaxIt(".slide", -100);
-        //         parallaxIt("img", -30);
-        //     }
-        //     mouse.moved = false;
-        // });
-        //
-        // function parallaxIt(target, movement) {
-        //     TweenMax.to(target, 0.5, {
-        //         x: (mouse.x - rect.width / 2) / rect.width * movement,
-        //         y: (mouse.y - rect.height / 2) / rect.height * movement
-        //     });
-        // }
-        //
-        // $(window).on('resize scroll', function(){
-        //     rect = $('#container')[0].getBoundingClientRect();
-        // })
-    })
     // $(() => {
     //     // products
     //     const productsAnimation = gsap.timeline({

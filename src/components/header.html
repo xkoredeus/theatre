@@ -22,14 +22,14 @@
                         <img src="{{root}}assets/img/pushkin-card.png" alt="pushkin card">
                         <span>Пушкинская<br> карта</span>
                     </a>
-                    <a href="#" class="header-actions__button">
+                    <button class="header-actions__button js-toggle-search">
                         <svg width="28" height="28">
                             <use xlink:href="#loupe"></use>
                         </svg>
-                    </a>
+                    </button>
                     <a href="#" class="header-actions__button">
                         <svg width="40" height="24" >
-                            <use xlink:href="#search"></use>
+                            <use xlink:href="#eye"></use>
                         </svg>
                     </a>
                 </div>
@@ -41,6 +41,24 @@
                         <use xlink:href="#cross"></use>
                     </svg>
                 </button>
+
+                <div class="header-search search">
+                    <form class="search__in">
+                        <input type="text" class="search__input" placeholder="Введите свой запрос">
+                        <div class="search__buttons">
+                            <button type="submit" class="search__button">
+                                <svg width="20" height="20" fill="none" stroke="#212529">
+                                    <use xlink:href="#loupe"></use>
+                                </svg>
+                            </button>
+                            <button type="reset" class="search__button">
+                                <svg width="20" height="20">
+                                    <use xlink:href="#cross"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <div id="menu" class="header-menu">

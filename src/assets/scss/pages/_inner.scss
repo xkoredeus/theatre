@@ -412,7 +412,7 @@
   @include r($breakpoint-1) {
     min-height: 435px;
   }
-  
+
   @include r($breakpoint-4) {
     min-height: 315px;
     max-width: 226px;

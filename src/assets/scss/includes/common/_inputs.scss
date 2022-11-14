@@ -1,13 +1,16 @@
 input,
 textarea,
 select {
-  color: $dark;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: $font-inter-light;
   padding: 12px 25px;
   border-radius: 2px;
   border: none;
-  border: 1px solid $dark;
-  transition: all .4s ease;
+  @include ease-long;
+
+  @include r($breakpoint-1) {
+    font-size: 14px;
+  }
 }
 option {
   color: $dark;
@@ -16,13 +19,13 @@ textarea {
   resize: none !important;
   overflow: hidden;
   &::placeholder {
-    color: $dark;
+    color: #9B9B9B;
   }
 }
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder {
-  color: $dark;
+  color: #9B9B9B;
 }
 input:focus,
 textarea:focus,
